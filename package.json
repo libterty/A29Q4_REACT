@@ -6,7 +6,7 @@
     "scripts": {
         "lint": "eslint --format table --fix .",
         "start": "npm run build-client & node index.js",
-        "server": "nodemon index.js --ignore tests",
+        "dev": "npm run dev-client & nodemon index.js --ignore tests",
         "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/build",
         "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/build",
         "clean": "rm -rf .cache client/build"

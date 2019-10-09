@@ -16,8 +16,7 @@ module.exports = app => {
     });
 
     app.post('/api/item', async(req, res) => {
-        const { originalUrl } = req.body;
-        const shortBaseUrl = 'https://warm-sea-77822.herokuapp.com';
+        const { originalUrl, shortBaseUrl } = req.body;
         if (validUrl.isUri(shortBaseUrl)) {} else {
             return res.status(404).json({ err: 'Invalid Base Url format' });
         }
