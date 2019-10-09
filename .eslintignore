@@ -1,0 +1,9 @@
+/views
+/client/build
+/client/node_modules
+/config
+/models
+/routes
+/services
+/node_modules
+.cache

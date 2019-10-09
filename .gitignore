@@ -2,4 +2,4 @@
 *.cache
 /src/node_modules
 /src/client/node_modules
-DS_Stores
+DS_Store
