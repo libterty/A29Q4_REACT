@@ -36,27 +36,31 @@ class Landing extends Component {
     this.setState({ clickSubmit: true, showApiError: false });
     if (this.state.clickSubmit && this.state.originalUrl) {
       this.setState({ showLoading: true, showShortenUrl: false });
-      const reqObj = {
-        originalUrl: this.state.originalUrl,
-        shortBaseUrl: constants.baseUrl
-      };
-      createShortUrl(reqObj)
-        .then(json => {
-          setTimeout(() => {
-            this.setState({
-              showLoading: false,
-              showShortenUrl: true,
-              shortenUrl: json.data.shortUrl
-            });
-          }, 0);
-        })
-        .catch(error => {
-          this.setState({
-            showLoading: false,
-            showApiError: true,
-            apiError: 'Server Error'
-          });
-        });
+      const { originalUrl } = this.state;
+      fetch(`${document.location.origin}/api/item`, {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ originalUrl })
+      }).then(response => console.log(response));
+      // createShortUrl(reqObj)
+      //   .then(json => {
+      //     setTimeout(() => {
+      //       this.setState({
+      //         showLoading: false,
+      //         showShortenUrl: true,
+      //         shortenUrl: json.data.shortUrl
+      //       });
+      //     }, 0);
+      //   })
+      //   .catch(error => {
+      //     this.setState({
+      //       showLoading: false,
+      //       showApiError: true,
+      //       apiError: 'Server Error'
+      //     });
+      //   });
     } else {
       this.setState({ showError: true });
     }

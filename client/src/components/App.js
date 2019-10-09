@@ -15,17 +15,17 @@ class App extends Component {
           <div>
             <Header />
             <Switch>
-              <Route path="/" component={Landing} />
-            </Switch>
-          </div>
-        </BrowserRouter>
+              <Route exact path="/" component={Landing} />{' '}
+            </Switch>{' '}
+          </div>{' '}
+        </BrowserRouter>{' '}
         <div className="footer">
           Built by{' '}
           <a target="_blank" href="http://muhzi.com">
-            Muhsin.K
+            Muhsin.K{' '}
           </a>
-          © 2018
-        </div>
+          © 2018{' '}
+        </div>{' '}
       </div>
     );
   }
