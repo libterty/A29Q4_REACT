@@ -1,0 +1,54 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "lint": "eslint --format table --fix .",
+        "start": "npm run build-client & node index.js",
+        "server": "nodemon index.js --ignore tests",
+        "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/build",
+        "dev-client": "npm run clean && parcel client/src/index.html --out-dir client/build",
+        "clean": "rm -rf .cache client/build"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.16.2",
+        "babel-core": "^6.26.3",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "body-parser": "^1.17.2",
+        "express": "^4.15.3",
+        "html-react-parser": "^0.9.1",
+        "materialize-css": "^0.100.2",
+        "mongoose": "^4.11.1",
+        "nanoid": "^2.1.2",
+        "parcel-bundler": "^1.12.4",
+        "path": "^0.12.7",
+        "path-parser": "^2.0.2",
+        "react": "^16.0.0-alpha.13",
+        "react-dom": "^16.0.0-alpha.13",
+        "react-router-dom": "^4.2.2",
+        "react-scripts": "1.0.10",
+        "redis": "^2.8.0",
+        "shortid": "^2.2.8",
+        "util": "^0.11.1",
+        "uuid": "^3.2.1",
+        "valid-url": "^1.0.9"
+    },
+    "devDependencies": {
+        "eslint": "^6.5.1",
+        "eslint-config-prettier": "^6.4.0",
+        "eslint-plugin-prettier": "^3.1.1",
+        "nodemon": "^1.19.3",
+        "prettier": "^1.18.2"
+    },
+    "prettier": {
+        "semi": true,
+        "userTabs": true,
+        "singleQuote": true
+    }
+}
