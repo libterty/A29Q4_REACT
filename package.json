@@ -28,7 +28,7 @@
         "history": "^4.10.1",
         "html-react-parser": "^0.9.1",
         "materialize-css": "^0.100.2",
-        "mongoose": "^4.11.1",
+        "mongoose": "^5.7.5",
         "nanoid": "^2.1.2",
         "parcel-bundler": "^1.12.4",
         "path": "^0.12.7",
